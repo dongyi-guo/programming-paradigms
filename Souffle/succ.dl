@@ -1,0 +1,12 @@
+.decl A(x:symbol) 
+A("a"). A("c"). A("d"). A("f").
+.decl Less(x:symbol, y:symbol)
+Less(x,y) :- A(x),A(y),ord(x) < ord(y).
+
+.decl Transitive(x:symbol, y:symbol)
+Transitive(x,z) :- Less(x,y), Less(y,z).
+
+.decl Succ(x:symbol, y:symbol)
+Succ(x,y) :- Less(x,y), !Transitive(x,y).
+
+.output Less, Transitive, Succ

@@ -1,0 +1,12 @@
+.decl A(x:number)
+.output
+.comp case <option>{
+    .comp one{
+        A(1).
+    }
+    .comp two{
+        A(2).
+    }
+    .init c1 = option
+}
+.init c2 = case<one>
